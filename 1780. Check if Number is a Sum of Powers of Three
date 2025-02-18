@@ -1,0 +1,16 @@
+class Solution:
+    def checkPowersOfThree(self, n: int) -> bool:
+        orn=n
+        x=15
+        flag=0
+        while 3**x>n:
+            x=x-1
+        while 3**x>=1:
+            orn=orn-3**x
+            x=x-1
+            while 3**x>orn:
+                x=x-1
+            if orn==0:
+                flag=1
+        return bool(flag)
+       
